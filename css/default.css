@@ -5,14 +5,15 @@
 }
 
 body {
-  max-width: 6in; 
+  max-width: 600px; /* 6in; */ 
   font-style: normal; 
   font-family: 'Source Sans Pro', sans-serif;
   font-weight:300; 
   background-color: #FFFFFF;
-  text-align: justify;
+  text-align: justify; 
   #color: #3C3A37;
-  #margin: 10px auto 10px auto;
+  margin: 0 auto ; /* 10px auto 10px auto; */
+  word-wrap: break-word; 
 }
 
 a {
