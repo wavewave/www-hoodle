@@ -15,6 +15,13 @@ be easy.
 Prerequisite
 ===================
 
+Hoodle uses several external libraries and binary executable, such as [gtk+](http://www.gtk.org), 
+[poppler library](http://poppler.freedesktop.org), 
+[rsvg library](https://live.gnome.org/LibRsvg),  [gd library](https://bitbucket.org/pierrejoye/gd-libgd)
+and [pdftk tool](http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit). 
+In most linux distributions, these can be 
+installed easily by package managers. Here, I explain how to install them in some detail.
+
 gtk2hs installation
 ------------------- 
 
@@ -23,6 +30,7 @@ should have the <code>gtk+-2.0</code> library. Then, install <code>gtk2hs-buildt
 using <pre><code>> cabal install gtk2hs-buildtools </code> </pre> 
 and install <code>gtk</code> (which automatically installs cairo) 
 by <pre><code> > cabal install gtk </code> </pre>
+
 poppler installation
 --------------------
 
@@ -36,8 +44,8 @@ dependencies.)
 
 -----------
 
-Hoodle Installation 
-===================
+Hoodle Installation and Configuration
+=====================================
 
 Once <code>gtk2hs</code> and <code>poppler</code> are installed, then just type <pre><code>> cabal install hoodle  </code>  </pre> 
 
