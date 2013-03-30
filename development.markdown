@@ -29,3 +29,8 @@ Group Discussion and Issue Tracker
 Please use Issues and Wiki of <https://github.com/wavewave/hoodle>
 We also have google group mailing list <http://groups.google.com/group/hoodle>
 
+
+Blog
+------ 
+
+Blog articles about hoodle development can be found in <http://ianwookim.org/blog/tags/hoodle.html>. 
