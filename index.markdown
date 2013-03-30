@@ -1,11 +1,11 @@
 ---
-title: A pen notetaking program 
+title: free pen note taking program
 ---
 
 
  
 <p> 
-<code> hoodle</code> is a pen notetaking program developed in 
+Hoodle is a pen notetaking program developed in 
 [Haskell](http://www.haskell.org) 
 using <code>gtk2hs</code> (Haskell binding to <code>gtk</code> library). 
 </p>
@@ -13,8 +13,8 @@ using <code>gtk2hs</code> (Haskell binding to <code>gtk</code> library).
 <iframe width="560" height="315" src="http://www.youtube.com/embed/Z2wzpyxsVSU" frameborder="0" allowfullscreen></iframe>
 
 
-This project started as making a clone of <code>xournal</code>, 
-a notetaking program developed in C.  (See <http://xournal.sourceforge.net>)
+This project started as making a clone of [xournal](http://xournal.sourceforge.net), 
+a notetaking program developed in C.  
 Now <code>hoodle</code> works quite equivalent as <code>xournal</code> and 
 has more unique functionalities.
 
@@ -38,18 +38,12 @@ Installing <code>hoodle</code> should be very simple using <code>cabal-install</
 > cabal install hoodle
 </code></pre>
 
-**NOTE** : If you haven't installed <code>gtk2hs</code> (<http://projects.haskell.org/gtk2hs>), you need to the following. <pre> <code>
-> cabal install gtk2hs-buildtools
-> cabal install gtk
-</code></pre>
+Features 
+---------
 
-For detail (including pdf annotation support with poppler library, see installation tab) 
+- pdf annotation
 
-**NOTE** : Hoodle can be used as a pdf annotator. By default, this option is not turned on. See the installation page for detailed instruction for this.
-
-**NOTE** : One **NEW** special feature of <code>hoodle</code> compared with <code>xournal</code>:
-
-This program can make a split view (horizontal and vertical and
+- *Split view pane* : hoodle can make a split view (horizontal and vertical and
 arbitrary combination of them) of the same document similarly to 
 <code>emacs</code> buffers and windows. Try Horizontal/Vertical 
 Split in View menu of the program. This will be convenient when notetaking 

@@ -15,9 +15,7 @@ API documentation
     - <http://hackage.haskell.org/package/hoodle-parser>
     - <http://hackage.haskell.org/package/coroutine-object>
     - <http://hackage.haskell.org/package/xournal-types>
-    - <http://hackage.haskell.org/package/xournal-render>
     - <http://hackage.haskell.org/package/xournal-parser>
-    - <http://hackage.haskell.org/package/xournal-builder>
 
 User's Guide
 ------------

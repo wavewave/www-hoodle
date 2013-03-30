@@ -4,62 +4,73 @@ title: Installation
 
 <code>hoodle</code> is published as several packages 
 in [hackage](http://hackage.haskell.org/packages/hackage.html),  which is 
-a collection of releases of Haskell packages. Current version of <code>hoodle</code> is 0.1.1.1.
+a collection of releases of Haskell packages. Current version of <code>hoodle</code> is 0.2.
 
-If your system has ghc-7.0 or higher and haskell-platform-2011.2 or higher, and you have
+If your system has ghc-7.4 or higher and haskell-platform-2012.2 or higher, and you have
 installed gtk2hs and some of its subpackage (e.g. cairo, poppler), then the installation will 
-be easy. <pre><code>cabal install hoodle
- </code>  </pre> 
+be easy. 
 
-Probably, you may encounter some problems in installation. I describe some workaround for common problem 
-here. 
+----------
+
+Prerequisite
+===================
 
 gtk2hs installation
 ------------------- 
 
 <code>gtk2hs</code> is a haskell binding to the <code>gtk</code> library. To install it, your system 
-should have the <code>gtk+-2.0</code> library. Then, install <code>gtk2hs-buildtools</code> by using <pre>
-<code> cabal install gtk2hs-buildtools </code> </pre> 
-and install <code>gtk</code> (which automatically installs cairo).
-
+should have the <code>gtk+-2.0</code> library. Then, install <code>gtk2hs-buildtools</code> by 
+using <pre><code>> cabal install gtk2hs-buildtools </code> </pre> 
+and install <code>gtk</code> (which automatically installs cairo) 
+by <pre><code> > cabal install gtk </code> </pre>
 poppler installation
 --------------------
 
 <code>poppler</code> is a pdf rendering library. <code>poppler</code> in Haksell is a Haskell binding for 
 the library. To install <code>poppler</code> package in Haskell, you need to install glib version of 
-poppler. 
+poppler. (The corresponding package is usually named as <code>poppler-glib</code> in many linux distributions)
+After installing the <code>poppler</code> library, install haskell <code>poppler</code> library 
+by  <pre><code>> cabal install poppler </code></pre>
+(in fact, this <code>cabal-install</code> step is not needed because cabal automatically installs required 
+dependencies.)
 
-<pre><code>
-cabal install -fpoppler hoodle-render hoodle-core hoodle
-</code></pre>
+-----------
+
+Hoodle Installation 
+===================
+
+Once <code>gtk2hs</code> and <code>poppler</code> are installed, then just type <pre><code>> cabal install hoodle  </code>  </pre> 
 
 
-## Setting subpixel X11 input for wacom digitizer
+Post-installation setup 
+-----------------------
+
+Hoodle has configuration file in <code> $HOME/.hoodle </code> and <code> $HOME/.hoodle.d</code>. 
+The former is for basic configuration without using haskell, and the latter is for advanced 
+configuration using haskell. In the following, I give some important remarks about configuration.   
+
+### Setting subpixel X11 input for wacom digitizer
 By default, <code>hoodle</code> does not use xinput extension which gives subpixel
 resolution for wacom digitizer because of compatibility. To enable X11 input 
 extension support, please do the following step. 
 
 First, check your wacom devices using <code>xsetwacom --list devices</code>. 
-In my case, the result is like the following: <pre>
-<code>
-> xsetwacom --list devices 
+In my case, the result is like the following: <pre><code>> xsetwacom --list devices 
 Wacom ISDv4 EC Pen stylus       	id: 9	type: STYLUS    
 Wacom ISDv4 EC Pen eraser       	id: 13	type: ERASER   
 </code>
 </pre>
 
-Then, add the following line in .hoodle file in your $HOME directory. <pre>
-<code>
-stylus="Wacom ISDv4 EC Pen stylus"
+Then, add the following line in .hoodle file in your <code>$HOME</code> directory. <pre>
+<code>stylus="Wacom ISDv4 EC Pen stylus"
 eraser="Wacom ISDv4 EC Pen eraser"
  
 xinput = "true"
 </code>
 </pre>
-The "Wacom ..." part must be replaced the result from <code>xsetwacom --list devices</code>.
+The "Wacom ..." part must be replaced by the result from <code>xsetwacom --list devices</code>.
 
-Scripting
----------
+### Scripting
 
 Hoodle has a scripting support like <code>xmonad</code>. If you have
 <code>$HOME/.hoodle.d/start.hs</code>, then the script will be automatically
