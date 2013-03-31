@@ -6,7 +6,7 @@ title: Documentation
 API documentation
 -----------------
 
-- Documentation on Hackage: haddock not compiled in hackage server 
+- Documentation on Hackage: 
     - <http://hackage.haskell.org/package/hoodle>
     - <http://hackage.haskell.org/package/hoodle-types> 
     - <http://hackage.haskell.org/package/hoodle-core>
@@ -22,11 +22,3 @@ User's Guide
 
 User's Guide on <code>hoodle</code> will be posted soon. 
  
-
-<pre class="sourceCode haskell"> 
-
-main :: IO ()
-main = do 
-  putStrLn "haskell"
-
-</pre>

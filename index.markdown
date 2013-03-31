@@ -10,8 +10,9 @@ Hoodle is a pen notetaking program developed in
 using <code>gtk2hs</code> (Haskell binding to <code>gtk</code> library). 
 </p>
 
+<center>
 <iframe width="560" height="315" src="http://www.youtube.com/embed/Z2wzpyxsVSU" frameborder="0" allowfullscreen></iframe>
-
+</center>
 
 This project started as making a clone of [xournal](http://xournal.sourceforge.net), 
 a notetaking program developed in C.  
