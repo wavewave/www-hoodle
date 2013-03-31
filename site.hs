@@ -30,7 +30,9 @@ main = do
                 , "download.markdown"
                 , "documentation.markdown"
                 , "gallery.markdown"
-                , "development.markdown"]) $ do 
+                , "development.markdown"
+                , "discuss.markdown"
+                ]) $ do 
         route   $ setExtension "html"
         compile $ pageCompiler
             >>> applyTemplateCompiler "templates/default.html"
