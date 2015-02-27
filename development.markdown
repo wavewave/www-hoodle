@@ -9,10 +9,6 @@ Git Repository
 
 - <https://github.com/wavewave/hoodle.git>
 
-also related utility
-
-- <https://github.com/wavewave/xournal-convert.git>
-
 Group Discussion and Issue Tracker
 ----------------------------------
 
