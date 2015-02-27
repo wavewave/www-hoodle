@@ -1,13 +1,14 @@
 {-# LANGUAGE OverloadedStrings #-}
 module Main where
 
-import Control.Arrow ((>>>),(>>^),(^>>),arr,second)
-
+-- import Control.Arrow ((>>>),(>>^),(^>>),arr,second)
+import Control.Applicative
+import Data.Monoid
+import Hakyll
 import System.FilePath
 import System.Directory
 import System.IO 
 
-import Hakyll
 
 main :: IO ()
 main = do 
@@ -25,25 +26,25 @@ main = do
 
     match "templates/*" $ compile templateCompiler
 
-    match (list [ "index.markdown"
-                , "installation.markdown"
-                , "download.markdown"
-                , "documentation.markdown"
-                , "gallery.markdown"
-                , "development.markdown"
-                , "discuss.markdown"
-                ]) $ do 
+    match (fromList [ "index.markdown"
+                    , "installation.markdown"
+                    , "download.markdown"
+                    , "documentation.markdown"
+                    , "gallery.markdown"
+                    , "development.markdown"
+                    , "discuss.markdown"
+                    ]) $ do 
         route   $ setExtension "html"
-        compile $ pageCompiler
-            >>> applyTemplateCompiler "templates/default.html"
-            >>> relativizeUrlsCompiler
+        compile $ pandocCompiler
+            >>= loadAndApplyTemplate "templates/default.html" defaultContext
+            >>= relativizeUrls
 
 
-setImgURL = setURL "png"
-setHtmlURL = setURL "html"
-setURL ext p = trySetField (ext ++ "url") (replaceExtension (getField "url" p) ext) p
+-- setImgURL = setURL "png"
+-- setHtmlURL = setURL "html"
+-- setURL ext p = trySetField (ext ++ "url") (replaceExtension (getField "url" p) ext) p
 
-deploysetup :: String -> HakyllConfiguration
-deploysetup str = defaultHakyllConfiguration { 
+deploysetup :: String -> Configuration
+deploysetup str = defaultConfiguration { 
                     deployCommand = "rsync -ave 'ssh' _site/* " ++ str 
                   } 

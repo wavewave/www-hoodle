@@ -29,7 +29,7 @@ to be significantly changed as the development is more progressed).
  Xournal xoj files can be read directly from <code>hoodle</code>. 
 
 Currently, to install <code>hoodle</code>, your system should have 
-<code>ghc-7.4</code> or higher, and [Haskell Platform](http://www.haskell.org/platform) 2012.2 or higher, or 
+<code>ghc-7.6</code> or higher, and [Haskell Platform](http://www.haskell.org/platform) 2014.2 or higher, or 
 equivalent libraries 
 (Haskell Platform is a set of standard libraries in 
 Haskell). 

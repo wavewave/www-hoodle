@@ -8,7 +8,7 @@ title: Download
  </code>  </pre> 
 
 
-Current version is 0.1
+Current version is 0.4
 
 There is also an utility for xoj format file : <code>xournal-convert</code>
 
