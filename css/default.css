@@ -24,6 +24,10 @@ a:hover {
   text-decoration: none;
 }
 
+img {
+  width: 400px;
+}
+
 div#navigation {
   text-align: left; /* center; */
   border-bottom: 4px solid brown; 
